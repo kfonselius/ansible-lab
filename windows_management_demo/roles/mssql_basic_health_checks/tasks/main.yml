@@ -18,7 +18,7 @@
 - name: Query MSSQL Version
   win_shell: |
     Import-Module "sqlps" -DisableNameChecking
-    Invoke-Sqlcmd -Query "SELECT @@VERSION;"
+    Invoke-Sqlcmd -Query "SELECT @@VERSION;" -ServerInstance "{{ansible_hostname}}\SQLEXPRESS"
   register: mssql_version
 
 - name: Print MSSQL Version
@@ -28,7 +28,7 @@
 - name: Query Time
   win_shell: |
     Import-Module "sqlps" -DisableNameChecking
-    Invoke-Sqlcmd -Query "SELECT GETDATE();"
+    Invoke-Sqlcmd -Query "SELECT GETDATE();" -ServerInstance "{{ansible_hostname}}\SQLEXPRESS"
   register: mssql_date
 
 - name: Print Current Date/Time
