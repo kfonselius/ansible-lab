@@ -10,7 +10,7 @@
 - name: Get logins and types
   win_shell: |
     Import-Module "sqlps" -DisableNameChecking
-    $SqlServer = {{ sql_server }}
+    $SqlServer = '{{ sql_server }}'
     $SqlServer = New-Object Microsoft.SqlServer.Management.Smo.Server($SqlServer)
     $SqlServer.Logins | Select-Object Name, LoginType, Parent
   register: get_logins_types
