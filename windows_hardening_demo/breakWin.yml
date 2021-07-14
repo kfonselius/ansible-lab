@@ -1,18 +1,17 @@
----
-- name: Windows Server Hardening Scan
-  hosts: "{{ target_hosts }}"
+--- 
+- 
   gather_facts: true
-
-
-  tasks:
-  - name: Break Windows
-    block:
-
-      - name: Change the guest account name
-        community.windows.win_security_policy:
-          section: System Access
-          key: MaximumPasswordAge
-          value: 92
-        
-    delegate_to: localhost
-    run_once: true
+  hosts: "{{ target_hosts }}"
+  name: "Windows Server Hardening Scan"
+  tasks: 
+    - 
+      block: 
+        - 
+          community.windows.win_security_policy: 
+            key: MaximumPasswordAge
+            section: "System Access"
+            value: 92
+          name: "Change the guest account name"
+      delegate_to: localhost
+      name: "Break Windows"
+      run_once: true
