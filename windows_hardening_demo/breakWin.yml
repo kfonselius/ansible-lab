@@ -7,7 +7,7 @@
     - 
       block: 
         - 
-          community.windows.win_security_policy: 
+          win_security_policy: 
             key: MaximumPasswordAge
             section: "System Access"
             value: 92
