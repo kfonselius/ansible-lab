@@ -40,8 +40,8 @@
 
       - name: Send Email with audit files
         mail:
-          #host: smtp.gmail.com
-          #port: 587
+          host: localhost
+          port: 25
           #username: "{{ gmail_account }}"
           #password: "{{ gmail_account_password }}"
           to: Kristopher Fonselius <kfonselius@gmail.com>
